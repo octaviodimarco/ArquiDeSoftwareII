@@ -10,6 +10,10 @@ import org.hibernate.tool.hbm2ddl.SchemaExport.Action;
 import org.hibernate.tool.schema.TargetType;
 
 import ar.edu.ucc.arqsoft.test.model.ObjetoGenerico;
+import ar.edu.ucc.arqsoft.test.model.Operacion;
+import ar.edu.ucc.arqsoft.test.model.Tarjeta;
+import ar.edu.ucc.arqsoft.test.model.Transaccion;
+import ar.edu.ucc.arqsoft.test.model.Usuario;
 
 public class SqlSchemaGenerator {
 
@@ -25,6 +29,10 @@ public class SqlSchemaGenerator {
 		
 		// AGREGAR ACA SUS CLASES NUEVAS
 		metadata.addAnnotatedClass(ObjetoGenerico.class);
+		metadata.addAnnotatedClass(Transaccion.class);
+		metadata.addAnnotatedClass(Operacion.class);
+		metadata.addAnnotatedClass(Tarjeta.class);
+		metadata.addAnnotatedClass(Usuario.class);
 	
 		// Agregar las Clases
 		SchemaExport schemaExport = new SchemaExport();

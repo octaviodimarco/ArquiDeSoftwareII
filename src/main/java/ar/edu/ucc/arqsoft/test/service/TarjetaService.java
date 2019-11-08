@@ -43,7 +43,7 @@ public class TarjetaService {
 
         tarjetaDto.setId(tarjeta.getId());
 
-        return new ResponseDto(tarjetaDto.getId().toString(), "ALTA", tarjetaDto.getId().toString());
+        return new ResponseDto(tarjetaDto.getId().toString(), "ALTA", "01");
 
     }
 
