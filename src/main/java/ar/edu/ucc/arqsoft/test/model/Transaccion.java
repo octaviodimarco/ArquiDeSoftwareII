@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,8 +27,8 @@ public class Transaccion extends ObjetoGenerico {
     @Column (name = "OPERACION", nullable = false)
     private Operacion operacion;
     
-    @OneToMany (fetch = FetchType.LAZY, targetEntity = Tarjeta.class)
-    @Column (name = "TARJETA", nullable = false)
+    @ManyToOne (fetch = FetchType.LAZY, targetEntity = Tarjeta.class)
+    @JoinColumn (name = "TARJETA", nullable = false)
     private Tarjeta tarjeta;
 
 

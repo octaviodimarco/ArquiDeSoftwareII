@@ -1,7 +1,11 @@
 package ar.edu.ucc.arqsoft.test.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +20,11 @@ public class Usuario extends ObjetoGenerico{
     
     @Column(name="DNI", length=200, nullable= false)
     private String dni;
-    
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="USUARIO")
+	private Set<Tarjeta> tarjetas;
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,5 +47,13 @@ public class Usuario extends ObjetoGenerico{
 
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+
+	public Set<Tarjeta> getTarjetas() {
+		return tarjetas;
+	}
+
+	public void setTarjetas(Set<Tarjeta> tarjetas){
+		this.tarjetas = tarjetas;
 	}
 }
